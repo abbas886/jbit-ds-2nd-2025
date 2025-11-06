@@ -52,3 +52,12 @@ def do_you_want_to_continue():
             print("Invalid input. Please enter 'y' or 'n'.")
 
 do_you_want_to_continue()
+
+##  while loop
+# want to rpint hello n times
+def print_hello_n_times(n):
+    i=1
+    while i<=n:
+        print(f"{i}. Hello")
+        i += 1
+print_hello_n_times(5)

@@ -1,5 +1,8 @@
 https://meet.google.com/sxb-orhq-mfu
 
+https://github.com/abbas886/jbit-ds-2nd-2025
+
+
 # 03-11-25
 Just I create workspace/folder jbit-ds-2nd-2025 
 All the files/sesssion note will keep in this folders.
