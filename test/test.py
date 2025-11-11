@@ -284,6 +284,148 @@ set_marks.intersection({88,110,120})
 print("Intersection with {88,110,120}:", set_marks.intersection({88,110,120}) )
 
 
+tuple1 = (1, 2, 3)
+tuple2 = (4, 5, 6)
+combined_tuple = tuple1 + tuple2
+print("Combined tuple:", combined_tuple)
+
+combined_tuple = tuple1.__add__(tuple2)
+print("Combined tuple using __add__:", combined_tuple)
+tuple_repeated = tuple1 * 3
+print("Tuple repeated 3 times:", tuple_repeated)
+print("3rd value",tuple1.index(2))
+print("count of 2 :",tuple1.count(2))
+print("length of tuple1 :",len(tuple1))
+print("max of tuple1 :",max(tuple1))
+print("min of tuple1 :",min(tuple1))
+
+football_players = {"Player1", "Player2", "Player3","Player3"}
+basketball_players = {"PlayerA", "PlayerB", "PlayerC","Player1"}
+all_players = football_players.union(basketball_players)
+print("Football players:", football_players)
+print("Basketball players:", basketball_players)
+print("All players:", all_players)
+common_players = football_players.intersection(basketball_players)
+print("Common players:", common_players)
+difference_players = football_players.difference(basketball_players)
+print("Players in football but not in basketball:", difference_players)
+symmetric_diff_players = football_players.symmetric_difference(basketball_players)
+print("Players in either football or basketball but not both:", symmetric_diff_players)
+football_players.add("Player4")
+print("Football players after adding Player4:", football_players)
+football_players.remove("PlayerN") if "PlayerN" in football_players else None
+
+print("Football players after removing Player2:", football_players)
+football_players.discard("Player5")
+print("Football players after discarding Player5 (not present):", football_players)
+football_players.update({"Player5", "Player6"})
+print("Football players after updating with Player5 and Player6:", football_players)
+football_players.clear()
+print("Football players after clearing:", football_players)
+print("Basketball players remain unchanged:", basketball_players)
+print("All players:", all_players)
+
+tupple1 = (10, 20, 30, 40, 50)
+print("Original tuple:", tupple1)
+sliced_tuple = tupple1[1:4]
+print("Sliced tuple (index 1 to 3):", sliced_tuple)
+reversed_tuple = tupple1[::-1]
+print("Reversed tuple:", reversed_tuple)
+tupple2 = (60, 70)
+new_tuple = tupple1 + tupple2
+print("New tuple after concatenation:", new_tuple)
+print("Original tuple remains unchanged:", tupple1)
+tupple1.count(20)
+print("Count of 20 in tupple1:", tupple1.count(20))
+print("Index of 30 in tupple1:", tupple1.index(30))
+week_days=("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
+week_ends=("Saturday", "Sunday")
+print("Week days:", week_days)
+print("Week ends:", week_ends)
+for day in week_days:
+    print(day)
+#week_days[0] = "Mon"  # This will raise an error since tuples are immutable
+week_ends += ("Funday",)
+print("Updated week ends:", week_ends)
+# week_ends.remove("Funday")  # This will raise an error since tuples are immutable
+print("After removing Funday from week ends:", week_ends)
+print("before reversing tupple1:", tupple1 )
+reversed = list(tupple1).__reversed__()
+print("Reversed tupple1 using __reversed__:", reversed)
+for item in reversed:
+    print(item, end=' ')
+
+employee = {
+    "name": "John Doe",
+    "age": 30,
+    "department": "Sales",
+    "is_manager": False 
+}
+print("Employee Dictionary:", employee)
+print("Employee Name:", employee["name"])
+employee["age"] = 31
+print("Updated Employee Age:", employee["age"])
+employee["salary"] = 50000
+print("Added Employee Salary:", employee["salary"])
+del employee["is_manager"]
+print("Employee Dictionary after deleting is_manager:", employee)
+print("Employee Keys:", employee.keys())
+print("Employee Values:", employee.values())
+print("Employee Items:", employee.items())
+print("Iterating through Employee Dictionary:")
+for key, value in employee.items():
+    print(f"{key}: {value}")    
+employee_copy = employee.copy()
+print("Copied Employee Dictionary:", employee_copy)
+employee.get("department")
+print("Employee Department using get():", employee.get("department"))   
+print("employee department using key :",employee["department"])
+print(employee.get("location", "Not Specified"))
+emp1 = employee.fromkeys(['name', 'department'])
+print("Employee Dictionary after fromkeys():", emp1)
+employee.pop("salary")
+print("Employee Dictionary after popping salary:", employee)
+employee.popitem()
+print("Employee Dictionary after popping an item:", employee)
+employee.update({"age": 32, "location": "New York"})
+print("Employee Dictionary after update():", employee)
+employee.setdefault("is_manager", True)
+print("Employee Dictionary after setdefault():", employee)
+empl1={'name':'Alice','age':28
+       ,'department':'HR' 
+       ,'is_manager':True 
+       }
+empl2={'name':'Bob','age':35
+       ,'department':'IT'
+         ,'is_manager':False 
+         }
+emp3={'name':'Charlie','age':30
+       ,'department':'Finance'
+            ,'is_manager':True 
+            }
+employees = [empl1, empl2, emp3]
+for emp in employees:
+    print(emp)
+emp4={'name':'David','age':40
+       ,'department':'Marketing'    
+            ,'is_manager':False 
+            }
+employees.append(emp4)
+print("Employees after adding emp4:")
+for emp in employees:
+    print(emp)
+employees.remove(empl2)
+print("Employees after removing empl2:")
+for emp in employees:
+    print(emp)
+
+
+
+   
+
+
+
+
 
 
 

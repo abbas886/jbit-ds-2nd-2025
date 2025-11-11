@@ -218,7 +218,7 @@ Next session - switch and loops/controle statements
 # 05-11-2025
 Recap - what we discussed in the previous session.
 
-swtch - match
+switch - match
 - conditional statement - similar to "if" condition
 why switch/match?
 if more alternatives are there, it is difficultl to read if you write the code using "if" condition.
@@ -261,7 +261,7 @@ print even number between r1, r2
 
 # single table
 def table(n):
-    for i in range(1,10):
+    for i in range(1,11):
        print(f" {n} * {i} = {n*i}")
 
 # to print tables from 1 to 10
@@ -321,11 +321,212 @@ while(True):
 Sir I am having some what confusion in (while) sir - will discuss tomorrow.
 will discuss few more examples using while loop
 
+
+Session : 06-11-2025
+-------------------
+Recap - what we discussed yesterday.
+
+while (condition):
+    statements
+
+want to print hellow 10 times
+
+i=1
+while(i<=10>):  11<=10 
+    print("hello")
+    i = i + 1    //i +=1   no i++  python
+
+stn
         
    
 
+match(5)
+match("abcd")
+
+match(mont_number):
+case 1 :  return "January"
 
 
+# Collections
+group of elements
+why need collections?
+why can't use variables only instead of collections?
+sum = s1+s2+s3+s4+S5+s6+S7+s8
+60/90 students , it is difficulat to delcare and mage 60/90 variables
+How many types of collections are there?  Why somany collections in python
+list = []
+set
+tupple
+dictionary
+
+certain properties/factors
+ordered or not       10,20,60,40,1000
+mutability  - once you added element in the collection - can you modify?
+how can you access?   student[0] - based on index / key
+
+performance
+
+# list
+declarion/sytanx
+variable_name = []
+variable_name=[10,50,30,60,70,80]
+print(variable_name) / display all the elements - in the same order which you added
+variable_name[0]   // 10
+variable_name[1]   //50
+variable_name[-1]  //last element ie., 80
+
+sum=0
+for element in variable_name:
+    sum = sum + element
+    print (element)
+return sum
+#  go through https://docs.python.org/3/tutorial/datastructures.html
+
+07/11/2025
+----------
+Recap - what we discussed yesterday
+    collections - group of related elements
+    very important while doing actual project - IPL, shopping cart, banking, college,library
+    discussed about "list" 
+    list - python -you can elements of different data types - int, string, object, float
+    list - c,c++,java - you can store only values of particular datatypes
+    discussed about list api/methods
+what we are goig to discuss today
+    list, set, tupple, dictionary - important while doing the project
+
+# Environment setup
+download the python and install
+Environment variables - path to folder where you insrtalled
+download IDE - Integrated Development Environment
+visual studio code - IDE 
+add related extentions in visual studio code
+
+complete the 1st assignment which given.  Once you complete, share the assignment to respected faculty.
+will review and provide meaningfull comments.
+
+# set
+----
+list -> group of elements - can have duplicate values  - list1=[] - ordered
+    ordered means - in which order you entered, the values preserved in the same sequence
+set -> group of elements - no duplicates   - mathamtical set operations - union, intersection, difference
+    not ordered
+set1 = ()
+
+collections - want to conduct sports day - participate in different sports
+football = {cse-101,cs3-102,cs-105,cse-101}
+valleyball ={cse-106,cse-107,cse-101}
+wanted get all the students number who participated in both football and valleyball
+wwanted toget all the students who participated only football, but not in valleyball
+
+
+# tupple
+-----
+ordered
+allow duplicate
+immutable - you can't modify existing element
+banking - different types of accounts - saving_account, checkcing_account,deposit_account
+collecget - different  branches - cse,cse-it, it, cse-ds,cse-ai-ds
+
+# install npm first - https://nodejs.org/en/download   - windows installer
+# npm install -g json-server
+# json-server --watch db.json
+
+# 10-11-2025
+
+Recap
+what we discussed in the last week
+    control strctures
+        conditional statements - if and match
+        looping statements - for and while
+    collections
+        list, tupple, set
+what we discussed in the previous session
+    tupple
+
+what we are going to discuss today  :  dictionary
+this week :  assignment based on collections
+             project work  - beckend app using collections,  json-ser for mock datay, http methods and status codes
+
+# dictionary
+list, set, tupple - we can store elements - but you don't know what are the elements
+l1 = [10,2030,60,30]  what are these values?  is marks?  is score? student id? emplees ids?
+
+dictionary - set of fields/properties  - key and value
+emp = {
+    "emp_id" : "emp_111",
+    "emp_name" : "Rakesh",
+    "emp_salary" : 40000,
+    ----
+    ---
+}
+How can we access particular field value?
+emp["emp_id"]  -  will give emp_111
+emp.get("empe_id")  - both sare same
+emp.add(  key, values    )
+
+
+how can we add "n" number of employess/students
+use 2 collections together ie., dictionary(single stdent/object), list- to have group of students
+
+employees=[]
+emp1={
+
+}
+emp2={}
+emp3 = {}
+employees.add(emp1)
+employees.add(emp2)
+
+sorted(data, key=lambda x: x['age'])
+sorted(data, key=itemgetter('age'))
+sorted(emp_list, key= lambda x : x["salary"],reverse=True)
+
+
+11/11/25
+--------
+Recap
+what we discussed yesterday:
+dictionary - key value pairs
+Advantages of dictionary over other collections : Other collections we can store group of elements(can any data type) - we can't find what the data belongs to?
+list =[] - we don't know whether the data is relatedt marks, emp salary or dept ids or player score
+Where as in dictionary we an specify key i.e., the name of property/field/column
+
+dict = {
+    "key":"value"
+}
+student = {
+    "student_id" : "csc_001",
+    "student_name" : "Kavya",
+    "branch":"cse_ds"
+
+}
+group of dictionary - list of students
+student1= {}
+student2 = {}
+students=[]
+students.append(student1)
+students.append(student2)
+
+previous week discussed about list, tupple, set
+what we are going to discuss today  :  proper crud operations for one entity/domain student/employe/player
+laster will combine/use some association
+student ->  branch
+employee ->  department
+player -> Team
+
+This example - employee_service -
+initialize()
+get_all_employees()
+get_all_employees(depat_id)
+get_sorted_employes(salary)
+get_top_n_employees()
+get_top_n_employees(deptid)
+add_employee(dept)
+get_employee(emp_id)
+update()
+delete()
+
+update_employee  - debug in tomorrws sessions.
 
     
 

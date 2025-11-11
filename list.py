@@ -1,4 +1,5 @@
 #  for explanation purpose - will write code without function
+marks =[] # empty list
 marks = [45, 67, 89, 23, 78, 90, 56]   # intialize a list
 print(marks)
 
@@ -25,17 +26,17 @@ failed_subjects = 0
 passed_subjects = 0
 marks.append(30)
 def sum_of_list_elements(marks):
-    total = 0
+    total = 0  # local variables - can't access outside function
     global failed_subjects, passed_subjects   ## vriable from outside function
-    for sub_marks in marks:
+    for sub_marks in marks:    # for element in list
         total += sub_marks
         print("marks : ", sub_marks)
         if sub_marks < 35:
             failed_subjects += 1
         else:
             passed_subjects += 1
-    return total
-total_marks = sum_of_list_elements(marks)
+    return total,failed_subjects, passed_subjects
+total_marks, failed_subjects, passed_subjects = sum_of_list_elements(marks)
 print("total marks:", total_marks)
 print("failed subjects:", failed_subjects)
 print("passed subjects:", passed_subjects)
@@ -82,6 +83,8 @@ print("length of other list:", len(other_list))
 #sliced_list = other_list[2:10]
 marks.clear()
 print("after clearing marks list:", marks)
+
+ 
 
 
 

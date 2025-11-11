@@ -58,6 +58,6 @@ do_you_want_to_continue()
 def print_hello_n_times(n):
     i=1
     while i<=n:
-        print(f"{i}. Hello")
+        print(f".{i} Hello")
         i += 1
 print_hello_n_times(5)
