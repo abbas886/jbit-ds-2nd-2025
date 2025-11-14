@@ -18,20 +18,17 @@ performance
         O(n), O(1), O(long n)
     memory
 readability
-    naming convention
+    naming convention - coding standards
         variable, method, class
         IPL - players, player, team, teams, match, matches
             - add_player / addPlayer, getAllPlayers, get_players
 maintanance
     tools - monitoring tools
 enhacement
-    without modifing exist code, you should able to implemnt/enance the program/application
     Open -Close principle
         Open for extention
         Close for modification
-
-availability
-    redundancy
+reusability
 
 we snhould not write any print/console.log/SOP in the actual program/method/classes
 You can use print statements in test programe -  you unit test cases - disscuss later.
@@ -52,39 +49,6 @@ Functinality
         Update  - update player details
         Delete  - delete the player
 
-
-
-#  Doubts/Clarificatinos
-isPrime
-A number is called prime if it is not divisible by any other number except 1 and the same number
-5, 7 , 11, 13, 17  - prime numbers
-6 - is divisible by 2 and 3 - it is not prime
-12 - is divisible by 2,3,4,6 - so it is not prime
-
-
-if you want to find n is prime or not.  try to check with it is divisible by 2, 3 ,4 till n-1
-
-def isPrime(n):
-    if(n%2==0):
-        return false
-    if(n%3==0):
-        return false
-    ......
-    if(n % (n-1) ==0 )
-        return false
-    return true
-
-def isPrime(n)
-    if(n<1):
-        return false
-    for i in range(2,n-1):
-        if(n % i ==0)
-            return false
-    return true
-
-    
-
-list_of_prime
 
 # How to learn a programming language quickly and efficiantly?
 Compare programming language with English
@@ -112,7 +76,7 @@ tomorrow will discuss :
 
 conditional statements
 control statements
-defind methods
+define methods
 
 
 # Session - 04-11-2025
@@ -528,7 +492,92 @@ delete()
 
 update_employee  - debug in tomorrws sessions.
 
-    
+# list of project domains in computer science to develop backend crud operations using python - search in google and select domain
+
+
+#  12-11-25
+------------
+Today I am going to discuss how to start our actual project - IPL (player, team, match etc.,)
+You people supposed to choose your own domain
+seasrch list od domain
+seasrch list of entities  (employee, department, account, address)
+
+Once you CRUD operations(methods) it be accessable via net - other team members will access from other server - BE will be in one server,  FE will in another server,  there may another layers in different servers
+
+Once I deploye my code,  It should be access via some end point - http end points
+what are the http methods:
+http get   - to fetch the details
+http post  - to create new record
+http delete - to delete the existing record
+http put   - to update the existing record
+
+These http methods return message + status codes
+what are the http status codes:
+2XX   - success(200) , successfully created(201)
+3XX
+4XX   - not found(404)/no cotent
+5XX  - Internal server error - your code errors
+
+mock database - json server
+first you need to install node (server side javascript)  -https://nodejs.org/en/download
+first you need to install json-server
+    npm install -g json-server
+    npm - node package manager  (like pip in python)
+    -g - global
+create sample data using json(JavaScript Object Notation)
+[
+    {"emp_id",""Harshini},
+    {},
+    {}
+]
+start json-server   -  json-server --watch db.json
+--watch - it will watch for updates if you do once the server is started
+if --watch is not there, you need to restart the json-server everytime whenever you update the data
+test the endpoints in the browser
+
+http://<ip_addres/dns>:<port-number>/key
+Ex:
+http://localhost:3000
+http://localhost:3000/posts
+http://localhost:3000/profile
+
+How to access the json-server data from your python code/app
+import request
+import josn
+
+base_url = "http://localhost:3000/"
+response = get(f"{base_url}/posts")  json
+return response.json()
+
+IPL 
+---
+create a separte folder - ipl
+create ipl_db.json - will add sample ipl database - player, team, match
+start ipl datbase - like how I started db.json
+ipl services
+player_service.py  - respective crud operations
+team_service.py
+match_service.py
+
+
+online tools called json viewers  - copy the raw data and check
+
+Tomorrow :  delete_plyaer,  update_player
+implement crud operations in other services i.e., team_service and match_service
+
+I am dveloping for ipl domain - you supposed to choose your own domain
+Next identify the entities - can you please identify 5 entities in <domain>
+create sample json data - similar to ipl_db.json
+for each entity - create service like player_service
+write test method for each service like player_service_test
+
+images/video/audio - lob - large objects - blob  - binary large object/ clob- character
+generally we supposed to in AWS S3 bucket / share drive - provide url
+
+Karthik reddy Thotapally : Sir please explain how to write report
+
+
+
 
 
 

@@ -1,0 +1,78 @@
+{
+  "players": [
+    {
+      "id": "1",
+      "name": "Virat Kohli",
+      "team": "RCB",
+      "matches": 192,
+      "runs": 6076,
+      "average": 38.16,
+      "strikeRate": 130.41
+    },
+    {
+      "id": "2",
+      "name": "MS Dhoni",
+      "team": "CSK",
+      "matches": 204,
+      "runs": 4632,
+      "average": 40.01,
+      "strikeRate": 137.14
+    },
+    {
+      "id": "3",
+      "name": "AB de Villiers",
+      "team": "RCB",
+      "matches": 176,
+      "runs": 5055,
+      "average": 40.16,
+      "strikeRate": 152.03
+    },
+    {
+      "id": 999,
+      "name": "Test Player",
+      "team": "Test Team"
+    },
+    {
+      "id": 5,
+      "name": "Test Player",
+      "team": "Test Team"
+    },
+    {
+      "id": 500,
+      "name": "Test Player",
+      "team": "Test Team"
+    }
+  ],
+  "teams": [
+    {
+      "id": "1",
+      "name": "RCB",
+      "city": "Bangalore",
+      "championshipsWon": 0
+    },
+    {
+      "id": "2",
+      "name": "CSK",
+      "city": "Chennai",
+      "championshipsWon": 3
+    }
+  ],
+  "matches": [
+    {
+      "id": "1",
+      "team1": "RCB",
+      "team2": "CSK",
+      "date": "2023-04-15",
+      "venue": "M. Chinnaswamy Stadium",
+      "result": "RCB won by 5 wickets"
+    },
+    {
+      "id": "2",
+      "team1": "CSK",
+      "team2": "RCB",
+      "date": "2023-05-10",
+      "venue": "MA Chidambaram Stadium",
+      "result": "CSK won by 20 runs"
+    }
+  ]
+}

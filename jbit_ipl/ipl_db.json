@@ -1,0 +1,58 @@
+{
+  "players": [
+    {
+      "id": "1",
+      "name": "Virat Kohli",
+      "team": "RCB",
+      "role": "Batsman",
+      "matches_played": 192,
+      "runs_scored": 6076,
+      "wickets_taken": 15
+    },
+    {
+      "id": "2",
+      "name": "Jasprit Bumrah",
+      "team": "MI",
+      "role": "Bowler",
+      "matches_played": 89,
+      "runs_scored": 167,
+      "wickets_taken": 130
+    }
+  ],
+  "teams": [
+    {
+      "id": "1",
+      "name": "RCB",
+      "city": "Bangalore",
+      "captain": "Virat Kohli",
+      "matches_won": 98,
+      "matches_lost": 92
+    },
+    {
+      "id": "2",
+      "name": "MI",
+      "city": "Mumbai",
+      "captain": "Rohit Sharma",
+      "matches_won": 110,
+      "matches_lost": 80
+    }
+  ],
+  "matches": [
+    {
+      "id": "1",
+      "team1": "RCB",
+      "team2": "MI",
+      "date": "2023-04-15",
+      "venue": "Wankhede Stadium",
+      "winner": "MI"
+    },
+    {
+      "id": "2",
+      "team1": "CSK",
+      "team2": "KKR",
+      "date": "2023-04-16",
+      "venue": "M. A. Chidambaram Stadium",
+      "winner": "CSK"
+    }
+  ]
+}
