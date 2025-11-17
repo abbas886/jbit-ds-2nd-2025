@@ -1,0 +1,89 @@
+{
+  "players": [
+    {
+      "id": "1",
+      "name": "Virat Kohli",
+      "team": "RCB",
+      "role": "Batsman",
+      "matches": 192,
+      "runs": 6076,
+      "average": 38.16
+    },
+    {
+      "id": "2",
+      "name": "MS Dhoni",
+      "team": "CSK",
+      "role": "Wicketkeeper Batsman",
+      "matches": 204,
+      "runs": 4876,
+      "average": 40.23
+    },
+    {
+      "id": "3",
+      "name": "Jasprit Bumrah",
+      "team": "MI",
+      "role": "Bowler",
+      "matches": 89,
+      "wickets": 130,
+      "average": 24.45
+    },
+    {
+      "id": "4",
+      "name": "Rohit Sharma",
+      "team": "MI",
+      "role": "Batsman",
+      "matches": 202,
+      "runs": 10090,
+      "average": 54
+    }
+  ],
+  "teams": [
+    {
+      "id": "1",
+      "name": "Royal Challengers Bangalore",
+      "abbreviation": "RCB",
+      "city": "Bangalore",
+      "championshipsWon": 0
+    },
+    {
+      "id": "2",
+      "name": "Chennai Super Kings",
+      "abbreviation": "CSK",
+      "city": "Chennai",
+      "championshipsWon": 3
+    },
+    {
+      "id": "4",
+      "name": "sunrisers hyderabad ",
+      "abbreviation": "SRH",
+      "city": "Hyderabad",
+      "championshipsWon": 6
+    }
+  ],
+  "matches": [
+    {
+      "id": "1",
+      "team1": "RCB",
+      "team2": "CSK",
+      "date": "2023-04-15",
+      "venue": "M. Chinnaswamy Stadium",
+      "result": "CSK won by 5 wickets"
+    },
+    {
+      "id": "2",
+      "team1": "MI",
+      "team2": "RCB",
+      "date": "2023-04-18",
+      "venue": "Wankhede Stadium",
+      "result": "MI won by 20 runs"
+    },
+    {
+      "id": "3",
+      "team1": "CSK",
+      "team2": "MI",
+      "date": "2023-04-20",
+      "venue": "MA Chidambaram Stadium",
+      "result": "CSK won by 3 wickets"
+    }
+  ]
+}

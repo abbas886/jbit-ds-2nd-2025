@@ -2,6 +2,8 @@ https://meet.google.com/sxb-orhq-mfu
 
 https://github.com/abbas886/jbit-ds-2nd-2025
 
+https://us06web.zoom.us/j/87861658796
+
 
 # 03-11-25
 Just I create workspace/folder jbit-ds-2nd-2025 
@@ -66,10 +68,10 @@ essay writing               program
 
 statements
 ----------
-input statements  - reading the values from keyboard, fild, disk etc.,
+input statements  - reading the values from keyboard, file, disk etc.,
                     -input()
 output statements  - display the value in the console
-                    output()
+                    output() = print()
 
 
 tomorrow will discuss :
@@ -92,7 +94,7 @@ method  - discussed  - will discuss more examples while explainging conditional 
 # output satement:
 print("Hello")   // static text
 print(x,y)      // display the value of particular variable
-print(f"{x}, {y}") // display the value of particular variable
+print(f" x= {x}, y= {y}") // display the value of particular variable
 
 # In generall we won't use print/scan/input statements in real time applications.
 # we will read values from frontend/html/js
@@ -142,7 +144,7 @@ But some time we supposed to execute few statements and skip other statements ba
     if - else
     nested if
 
-2) switch
+2) switch - match
 
 find the grade of the student marks based on 3 subjects
 if average maraks are >=60  -  first class
@@ -281,6 +283,8 @@ while(True):
     c = intput()
     if(c!='y'):
         break
+break -> will come out from loop
+return -> will come out from the method
 
 Sir I am having some what confusion in (while) sir - will discuss tomorrow.
 will discuss few more examples using while loop
@@ -342,8 +346,8 @@ variable_name[-1]  //last element ie., 80
 sum=0
 for element in variable_name:
     sum = sum + element
-    print (element)
-return sum
+    #print (element)
+    return sum
 #  go through https://docs.python.org/3/tutorial/datastructures.html
 
 07/11/2025
@@ -427,6 +431,7 @@ How can we access particular field value?
 emp["emp_id"]  -  will give emp_111
 emp.get("empe_id")  - both sare same
 emp.add(  key, values    )
+emp.add("dept_no", "dept_101")
 
 
 how can we add "n" number of employess/students
@@ -499,7 +504,7 @@ update_employee  - debug in tomorrws sessions.
 ------------
 Today I am going to discuss how to start our actual project - IPL (player, team, match etc.,)
 You people supposed to choose your own domain
-seasrch list od domain
+seasrch list of domains
 seasrch list of entities  (employee, department, account, address)
 
 Once you CRUD operations(methods) it be accessable via net - other team members will access from other server - BE will be in one server,  FE will in another server,  there may another layers in different servers
@@ -575,6 +580,121 @@ images/video/audio - lob - large objects - blob  - binary large object/ clob- ch
 generally we supposed to in AWS S3 bucket / share drive - provide url
 
 Karthik reddy Thotapally : Sir please explain how to write report
+
+
+# 13/11/25
+Today - Recap - what we discussed till now.
+
+# 14/11/25
+----------
+I am going to start ipl project again today from scranch.
+
+I have choosen ipl domain.  You people supposed to choose your onwn domain for each team.
+Within the domain you need choose related entities.
+
+ipl domain - entities are player, team, match
+for each entity you need to decide the properties/fields
+Ex:  player -> player_id, player_name,  player_team, no_matches, no_wickets
+choose what are operations you need implement in each entity
+Ex:  player entity -> get_all_players,  get_player(), add_player(), delete_player,
+    top_scorers(), top_wicket_takers()
+
+To store the data related to all these entites - you need choose database - json-server as dabase
+
+architecture/flow of the project - diagram.
+draw.io tool to draw diagrams - flow.   - discussed
+
+1) sample databse - json-server
+    install node  - https://nodejs.org/en/download
+    install json-server  - npm install -g json-server
+    create sample json data  - Javacript Object Notation -
+                        format is smilar to our python list and dictionary
+                        {
+                            "players" :
+                                [
+                                    {}
+                                    {}
+                                    {}
+                                ]
+                            "teams":
+                                {}
+                                {}
+                                {}
+                            "matches":
+                                {}
+                                {}
+                            
+                        }
+    start server   -  js-server db.json   - if you start with this command, 
+                        you need to restart whenever you modify the data
+                    - json-server --watch db.json - when you update the data,
+                        it automatically restart.
+    test through browser
+        http://<ip_addres/domain_name>:<port_number>
+        http://localhost:3000
+            - it will show list entitiesy which you defined in the db.json
+        http://localhost:3000/players
+            it listout all the players
+        http://localhost:3000/players?id=101
+            it will show particular player details if exist
+            other wise it will show []
+
+done with sample data which given by json-server ??
+
+Now I want to create json data realted to our domain i.e, player, team and match
+and start the server and test.
+
+to test the end points - you can use postman/rest client - test all the crud operations
+if you test through browser - you can test only GET methods -
+     you can't test delete/update/create through browser
+
+
+
+1) json-server - DONE
+2) create services
+    player_server.py
+        import related librararies - request and json
+        define crud operations
+
+http :
+get - fetch the details
+post - create new record
+put - to update the existing record
+delete - to to delete the existing record
+
+update_player(player_id, player):  -  need to debug - will discuss tomorrow.
+
+# 15/11/25
+Recap : what we have done in previous session
+    json-server - how to downaload, add sample data and start server and the test
+    add ipl_db.json sample data and tested through browser
+    explain complete architecture/flow diagram
+    start player_service
+
+today - in player_service - update_player(player_id, player):  -  need to debug - will discuss tomorrow.
+        delete_player(player_id)
+        team_service - do all the crud operations similar to player_service
+
+def update_plyaer(player_id, player):
+    if not get_player(player_id):
+        return "{"error", "player does not exist""}
+    resp = request.put(url, json = player)
+
+def delete_player(player_id):
+    respose = request.delete(f"{base_url}player_id)")
+    # need to know whether player exist 
+    # and deleted now successfully
+    # if the operation success - http status code 200/Ok
+    # if the record does not exist, http status code 404/Not Found
+
+
+
+
+
+
+
+
+
 
 
 
