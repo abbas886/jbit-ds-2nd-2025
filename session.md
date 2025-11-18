@@ -688,6 +688,69 @@ def delete_player(player_id):
     # if the record does not exist, http status code 404/Not Found
 
 
+# json server installation - node
+1) download npm (node package manager - similar pip)
+    https://nodejs.org/en/download
+
+    check the version
+    cmd prompt :  npm --version
+2) install json-server using npm
+    npm install -g json-server
+
+3) create sample database
+    create a file db.json
+    add json data
+    {
+        "name" : "suresh"
+    }
+4) start the json server
+    json-server db.json
+
+17/11/25
+--------
+Recap:
+Json server
+How downloadload and start json server
+how to add sample data
+created player_service and team_service and teste.
+Show the flow/architecture diagram
+
+what we we are going to discuss today.
+    defined match service and tested it.
+
+we need define apis i.e, team_api, match_api and player_api
+why we need api as we already defined services, is not enough?
+
+whatever the services you defined using python code, you can't call from other server/FE
+Why?
+Other server/FE may be used other languages like Angular/React/ Javascript/TypeScript/ Java
+Actually you should share your server side code to other team/FE people
+If you want to integrate your code, you should create REST endpoints and provide only these endpints to
+other teams who wanted to consume your services.
+
+Like json-server provided endpoints and you consumed from your services,  you also need to provide standard http endpoints to other servers/FE.
+
+while consuming json-server endpoints,  you used request and json librarires(you impported)
+while producing endpoints,  you need libraries -   Fast API, Flask api
+
+Fast API - asynchronouse and non-blocking
+Flask - synchrous and blcoking
+synchrouse   -  server1 -> request some data from -> server2
+        what if server2 is busy, the reqeust from server1 should wait till server2 completed previous task
+        it should wait till request processed and response received successfully.
+
+asynchronouse :  server1 -> request some data from -> server2
+                 server1 no need to wait till server2 response back, it measn server1 can do some other task
+
+Because of these reasons we are using Fast api (which support both syncrhouse and asynchrouse way of communications)
+
+Before starting api layer, let me know if you have any questions.
+Will discuss postman too.
+
+Next Session - Fast API and Postman to test the apis.
+
+
+
 
 
 
