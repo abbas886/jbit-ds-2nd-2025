@@ -35,6 +35,15 @@
       "matches": 202,
       "runs": 10090,
       "average": 54
+    },
+    {
+      "id": "31",
+      "name": "Siraj",
+      "team": "Vijag",
+      "role": "Bowler",
+      "matches": 100,
+      "wickets": 200,
+      "average": 40
     }
   ],
   "teams": [

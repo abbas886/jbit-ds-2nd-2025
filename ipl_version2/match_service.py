@@ -36,10 +36,10 @@ def update_match(match_id, match_data):
     elif( response.status_code==404 ):
         return {"error": "Match not found."}
     elif( response.status_code==500 ):
-        return {"error": "Internal server error."}
-    
+        return {"error": "Internal server error."}   
                 
     return response.json()
+
 def delete_match(match_id):
     if not get_match_by_id(match_id):
         return {"error": "Match not found."}

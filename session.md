@@ -749,6 +749,208 @@ Will discuss postman too.
 
 Next Session - Fast API and Postman to test the apis.
 
+18/11/25
+--------
+Recap:  What we discussed yesterday:
+
+we discussed about match_service by intergrating with json-server
+defined all the required crud operations and testd
+
+We consumed rest api which provided by Json-Server
+
+What we are going to do today
+Create rest api by using FastAPI so that client/FE/Other server will consume
+FastAPI - will provide synchronouse and asynchrnouse way of communication
+
+install FastAPI  ,  one server - in which FastAPI will run
+pip install fastapi uvicorn
+
+import the required libraries
+
+app = FastAPI()
+
+@app.get("\players/")
+def get_all_players():
+
+
+
+@app.post()
+def add_player():
+
+@app.delete()
+@app.put()
+
+run the server - uvicorn main:app --reload
+--reload - similar to --watch in json-server - hot reload
+
+
+Postman/restclient - these tools are used test the rest end points
+download and install postman/restclient
+
+http://127.0.0.1:8000/docs  - will discuss  - swagger ui - today
+
+Tomorrow : first please ask doubts  about Fast api and postman - if any.
+IF ther are no doubts,  we try to implement rest end points in our actual application
+as per our architecture
+
+
+19/112025
+---------
+Recap - what we discussed yestereday:
+  How can we develop restful endpoints by using Fast API
+  How can we use uvicorn server
+  How can we test the endpoints by using postman
+What we are going to discuss today
+
+if you want to test all the endpoints through postman/restclient,  you have see the code to find what are the endpoints are avaialable.
+Because you are the developers, you can see the code to find all the end points.
+
+These endpoints should be tested by QA/Testing team also.
+
+While testing post method,  you need to send proper json object (dictionary) with all the required keys and values - difficult to prepare even for developers also.
+
+To know what are endpoinsts are availble,  you supposed provide documentation..
+Instead of writing documentation manually, Fast api provided swagger UI - with all the details of end points
+
+If you wnat to access this documentaiont
+http://localhost:8000/docs
+It will list all the endpoints - you should able to test in this UI itself - without using 3rd party tools like postman/rest client
+
+Using Swagger-ui tested all the endpoints - without seeing the code to find out the endpoints details as well as required parameters.
+
+
+created player_api,imported required librararies, imported player_service
+
+defined all the required mappings.
+To test these endpoints,  you should define one more paython file(As we defined for services files) Why?
+because we are not going to call these python methods to test.  We supposed to test by using end points only(not methods)
+
+player_api ->  player_service -> json server
+We need to start json-server and then uvicorn server
+json-server --watch ipl_db.json  - started json server now
+
+Started json server
+started uvicorn server
+and tested all the end points by using swagger-ui
+
+Flask api - does not support asycn  operations - does not support swagger UI also
+Fast api - you can do both async and sync operations - support swagger UI
+
+Apart from calling methods of service in api, you have do some type of validations before calling service methods.
+Ex: While adding new plyaer,  you supposed to check whether team you provided is exist or not
+to check this,  we need to define a method in team_service which should fetch all the unique team names
+before hitting add_player of player_service from player_api,  hit team_service(Call method which fetch all unique names)and check whether team exist or not.  If the team doesn't exit, return error message (without calling player_service.add_player())
+
+As per the client requirements, you need to write different methods to validate the data is prpoer or not.
+
+We already done one such type of requirement - while adding new player,  we checked whether team belongs to this new player already exist or not.
+
+What we are goind to discuss tomorrow - define team_api restful http end points
+
+20/11/25
+--------
+Recap : what we discussed yesterday
+
+What we are going to discuss today.
+define team_api, stasrt json-server, start uvicorn server and test through swagger  ui
+1)create new python file - team_api.py
+2)import required libraries
+3)create instance of FastAPI  - app = FastAPI()
+4)define endpoints for all the operations which are available in team_service
+5)start json server
+6)start uvicorn server
+7)test through swagger-ui
+
+
+get mapping  - to fetch the data  - if any secure informatin is there - don't use get mapping
+    why?  http://localhost:8000/kavya/kavya@123
+post mapping - to crete the record  - if any secure information you need to send,  you supposed use only post mappint, not get mapping
+    if you want to send huge data, you need to use post mapping
+    {
+      "id": "name",
+      "id": "name",
+      "id": "name",
+      "id": "name",
+      "id": "name",
+    }
+
+
+To do teams project
+-------------------
+Every team should select their own domain
+once you choose your domain - select entitites
+IPL domain - I have selected 3 entities - player, team, match
+Student - student, course, teacher - entities
+
+
+Once you selected entities in particular domain,
+Identify fields/properties in each entity
+Student(id, name, branch, email_id, contact_nuber)
+Course(id, course_name, fee)
+teacher(id, name, salary)
+
+Library Management - Member, Book, Auther, publisher
+Fields/properties of MEmeber(id, name, joining_date, books)
+Book(id, name, price, auther, publishers)
+publisher(id, name, details)
+
+1)once you identify domain, entities and feilds for each entity,  prepare json-data
+test this through json-server - without writing any python code.
+2)write service python files - define crud operations similar to ip
+4) test service file by creating service_test.py - like how I tested player_service_test etc.
+
+5)create api layer - test thrugh swagger
+
+22/11/25
+--------
+Recap: What we disussed in the previous session.
+
+What we are going to discuss today:
+Review team domains, entities, properties/fields, assocation,role and multiplicity
+
+Tasks:
+A)  Task 1 - Database (One day)
+1)install NPM
+2)install json-server
+3)create sample json file
+4)start json-server and test through browser/postman
+
+B)Task 2: Service implementation(One day - couple of files)
+1) Create  separate service fiels - for each entity
+2) import required libraries
+3) base_url  (in which the json-server is ruunig)
+4) define the crud operations
+5) test through postmain / through code
+
+C) Task 3: api implementation(One day - couple of files))
+1) Create  separate api fields - for each entity
+2) import required libraries
+3) define crud operations
+4) test through swagger-ui   http://localhost:8000/docs
+
+D) Task 4: create frontend using html/css/js(couple of days)  OR Angular/React
+  while developing fronented - you may have some problems- interating backend.
+  You may identify few more end points(Api/services methods)
+  you have to add these endpoints in api and service files( apart from existing end points)
+
+E) Prepare project documentation/report - will discuss separately
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
