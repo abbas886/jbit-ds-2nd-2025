@@ -1,69 +1,87 @@
-base_url = "http://localhost:8000/teams"
+// teams.js
+import { display_team_players } from './players.js';
 
+const teams_base_url = "http://localhost:8001/teams";
+
+// -----------------------------
+// Load all teams
+// -----------------------------
 async function load_teams() {
-    
-        // Await the fetch request
-    const response = await fetch(base_url );
-     // Check if the request was successful
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-    const teams = await response.json();
-    return teams
+    const response = await fetch(teams_base_url);
+
+    if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    return await response.json();
 }
 
- async function display_teams() {
+// -----------------------------
+// Display list of teams in Side Navigation
+// -----------------------------
+async function display_teams() {
+    try {
+        const teams = await load_teams();
+        const listElement = document.getElementById('teams');
+        const loadingElement = document.getElementById('loading');
 
-    try{
+        listElement.innerHTML = ''; // clear loading placeholder
 
-    teams =  await load_teams()
-    const listElement = document.getElementById('teams');
-    const loadingElement = document.getElementById('loading');
-
-     
-    console.log(teams);
-    // Clear the loading message
-    listElement.innerHTML = ''; 
-    teams.forEach(team => {
+        teams.forEach(team => {
             const li = document.createElement('li');
-            const a  = document.createElement('a');
-            // set link text and href
-            a.textContent =`${team.name}`;
-            const url = `${base_url}?id=${team.id}`;
-            a.href = 'url | #';
-            // Pass parameter using event listener
-            a.addEventListener("click", function (event) {
-            event.preventDefault();      // stops page reload
-            display_team_details(team.id);            // call your function with parameter
-            });
-            //li.textContent = `${team.name}`;
-            li.appendChild(a)
-            listElement.appendChild(li);
-        });    
+            li.classList.add("team-item");
 
-       }   catch (error) {
-        // Handle any errors that occurred during the fetch operation
-        console.error('Error fetching data:', error);
-        loadingElement.textContent = 'Failed to load users. Please try again later.';
+            const a = document.createElement('a');
+            a.textContent = team.abbreviation;
+            a.href = "#";
+
+            // Click event → Load team details
+            a.addEventListener("click", function (event) {
+                event.preventDefault();
+                display_team_details(team.id);
+            });
+
+            li.appendChild(a);
+            listElement.appendChild(li);
+        });
+
+    } catch (error) {
+        console.error('Error fetching teams:', error);
+        const loadingElement = document.getElementById('loading');
+        loadingElement.textContent = "Failed to load teams.";
         loadingElement.style.color = 'red';
     }
 }
 
 display_teams();
 
-
-
-async function display_team_details(id){
-    
-    team_details = await load_team_details(id)
-    document.getElementById("team_id").textContent = team_details.id
-}
+// -----------------------------
+// Load team details by ID
+// -----------------------------
 async function load_team_details(id) {
-    const url = `${base_url}?id=${id}`;
+    const url = `${teams_base_url}/${id}`;
+    const response = await fetch(url);
 
-    const response = await fetch(url)
-    const team_details = await response.json();
-    return team_details
-    
+    if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    return await response.json();
 }
 
+// -----------------------------
+// Show team details in Main Content Section
+// -----------------------------
+async function display_team_details(id) {
+    const team_details = await load_team_details(id);
+
+    document.getElementById("team_id").textContent = team_details.id;
+    document.getElementById("team_name").textContent = team_details.name;
+    document.getElementById("team_city").textContent = team_details.city;
+    document.getElementById("team_abbreviation").textContent = team_details.abbreviation;
+    document.getElementById("team_championshipsWon").textContent = team_details.championshipsWon;
+
+    // Click event to load players section
+    document.getElementById("team_name").onclick = function (e) {
+        e.preventDefault();
+        display_team_players(team_details.name);
+    };
+}

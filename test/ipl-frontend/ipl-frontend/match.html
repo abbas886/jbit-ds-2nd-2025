@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>IPL Matches</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/modals.css">
+  <link rel="stylesheet" href="css/match.css">
+</head>
+<body>
+  <div include-html="partials/header.html"></div>
+
+  <div class="layout">
+    <aside class="sidebar small">
+      <h2>Filter</h2>
+      <input id="team_filter" placeholder="Team name" />
+      <button id="filter_btn" class="btn">Search</button>
+    </aside>
+
+    <main class="content">
+      <section class="card">
+        <h2>Matches</h2>
+        <ul id="match_list">
+          <li>Loading matches...</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>Match Details</h2>
+        <p><strong>ID:</strong> <span id="match_id"></span></p>
+        <p><strong>Team 1:</strong> <span id="team1"></span></p>
+        <p><strong>Team 2:</strong> <span id="team2"></span></p>
+        <p><strong>Venue:</strong> <span id="venue"></span></p>
+        <p><strong>Date:</strong> <span id="date"></span></p>
+        <p><strong>Winner:</strong> <span id="winner"></span></p>
+        <div id="match_tools" class="detail-tools"></div>
+      </section>
+    </main>
+  </div>
+
+  <div include-html="partials/modals.html"></div>
+  <div include-html="partials/footer.html"></div>
+
+  <script src="js/include.js"></script>
+  <script>
+    includeHTML();
+  </script>
+  <script src="js/modals.js"></script>
+  <script type="module" src="js/match.js" defer></script>
+  <script type="module" src="js/teams.js" defer></script>
+  <script type="module" src="js/players.js" defer></script>
+</body>
+</html>

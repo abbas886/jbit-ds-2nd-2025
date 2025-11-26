@@ -1,40 +1,74 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">  
-    <!-- Defer attribute ensures script runs after HTML is parsed -->
-    <script src="teams.js" defer></script>
-    <title>Document</title>
-    
+    <title>IPL Dashboard</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Load include.js FIRST (needed by others) -->
+    <script src="include.js"></script>
+
+    <!-- Main JS entry (ES Modules) -->
+    <script type="module" src="teams.js" defer></script>
 </head>
+
 <body>
 
-    <header>
-  <h2>Cities</h2>
-</header>
+    <!-- Header -->
+    <div id="header"></div>
 
-<section>
-  <nav>
-    <ul id ="teams">
-     <!-- Loading indicator -->
-            <li id="loading">Fetching data...</li>
-    </ul>
-  </nav>
-  
-  <article>
-    <h1 id = "team_id">London</h1>
-    <p id = "team_name">
-    <p id = "team_abbreviation"></p>
-    <p id = "team_city"></p>
-    <p id = "team_championshipsWon></p>
-        
-   </article>
-</section>
+    <div class="container">
 
-<footer>
-  <p>Footer</p>
-</footer>
-    
+        <!-- SIDE NAV BAR -->
+        <aside class="sidebar">
+            <h2>Teams</h2>
+            <ul id="teams">
+                <li id="loading">Loading teams...</li>
+            </ul>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="content">
+
+            <!-- TEAM DETAILS -->
+            <section class="card">
+                <h2>Team Details</h2>
+                <p><strong>Team ID:</strong> <span id="team_id"></span></p>
+
+                <p><strong>Team Name:</strong>
+                    <a href="#" id="team_name"></a>
+                </p>
+
+                <p><strong>Abbreviation:</strong> <span id="team_abbreviation"></span></p>
+                <p><strong>City:</strong> <span id="team_city"></span></p>
+                <p><strong>Championships Won:</strong> 
+                    <span id="team_championshipsWon"></span>
+                </p>
+            </section>
+
+            <!-- PLAYER LIST -->
+            <section class="card">
+                <h2>Player List</h2>
+                <ul id="players_list">
+                    <li>Select a team to view players</li>
+                </ul>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <div id="footer"></div>
+
+    <script>
+        /* Load header/footer dynamically */
+        includeHTML("header", "header.html");
+        includeHTML("footer", "footer.html");
+        includeHTML("players_list", "players.html");  // optional
+    </script>
+
 </body>
 </html>

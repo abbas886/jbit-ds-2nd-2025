@@ -1,10 +1,28 @@
 # define all the end points related to player api and test through swagger ui
 from fastapi import FastAPI
-
+from fastapi.middleware.cors import CORSMiddleware
 import player_service as service
 import team_service as team_service
 
 app = FastAPI()
+
+#Allow all origins OR restrict to your UI origin
+origins = [
+    "http://localhost",
+    "http://127.0.0.1",
+    "http://127.0.0.1:5500",
+    "http://localhost:3000",
+    "http://localhost:5500",
+    "null"                    # <-- Important when loading HTML from file://
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,     # or ["*"]
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.get("/")
 def server_running():

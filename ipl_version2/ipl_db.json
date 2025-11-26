@@ -79,20 +79,38 @@
       "result": "CSK won by 5 wickets"
     },
     {
-      "id": "2",
-      "team1": "MI",
-      "team2": "RCB",
-      "date": "2023-04-18",
-      "venue": "Wankhede Stadium",
-      "result": "MI won by 20 runs"
-    },
-    {
       "id": "3",
       "team1": "CSK",
       "team2": "MI",
       "date": "2023-04-20",
       "venue": "MA Chidambaram Stadium",
       "result": "CSK won by 3 wickets"
+    },
+    {
+      "id": "30",
+      "team1": "CSK",
+      "team2": "SRH",
+      "date": "2025-04-20",
+      "venue": "Uppal",
+      "result": "SRH won by 50 runs"
     }
   ]
+
+  "users": [
+    {
+      "id": "1",
+      "username": "adminUser",
+      "email": "",
+      "password": "admin_hashed_password",
+      "favoriteTeam": "RCB"
+    },
+    {
+      "id": "2",
+      "username": "superKingsLover",  
+      "email": "",
+      "password": "hashed_password_2",
+      "favoriteTeam": "CSK" 
+    }
+  ]
+
 }

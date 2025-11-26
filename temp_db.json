@@ -54,3 +54,57 @@
     }
   ]
 }
+//
+  {
+  "users": [
+    {
+      "userId": "U1001",
+      "name": "Abbas Mohammed",
+      "email": "abbas.m@example.com",
+      "phone": "+91-9876543210"
+    }
+  ],
+
+  "items": [
+    {
+      "itemId": "I2001",
+      "name": "Black Leather Wallet",
+      "category": "Accessories",
+      "description": "Black wallet containing ID card and credit cards",
+      "ownerId": "U1001"
+    }
+  ],
+
+  "locations": [
+    {
+      "locationId": "L3001",
+      "name": "Hyderabad Airport - Terminal 1",
+      "address": "Begumpet, Hyderabad"
+    }
+  ],
+
+  "reports": [
+    {
+      "reportId": "R4001",
+      "itemId": "I2001",
+      "reportedBy": "U1001",
+      "locationId": "L3001",
+      "type": "Lost",
+      "reportDate": "2025-11-21T10:15:00Z",
+      "statusId": "S5001",
+      "remarks": "Lost near security checkpoint"
+    }
+  ],
+
+  "statuses": [
+    {
+      "statusId": "S5001",
+      "reportId": "R4001",         // ← Status is linked to the report
+      "currentStatus": "Pending",
+      "updatedBy": "U1001",        // ← User who changed status (optional)
+      "updatedAt": "2025-11-21T10:20:00Z"
+    }
+  ]
+}
+
+}

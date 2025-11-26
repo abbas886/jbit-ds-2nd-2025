@@ -1,0 +1,4 @@
+/* match.css */
+#team_filter { width:100%; padding:8px; border-radius:6px; border:1px solid #ccc; margin-bottom:8px; }
+#filter_btn { padding:8px 10px; border-radius:6px; border:none; background:#1e3d59; color:#fff; cursor:pointer; }
+#match_list li { padding:8px; border-bottom:1px solid #eee; display:flex; justify-content:space-between; align-items:center; }

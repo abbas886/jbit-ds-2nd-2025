@@ -1,0 +1,12 @@
+{
+  "scripts": {
+    "server:json": "json-server --watch ipl_db.json --port 3000",
+    "server:api1": "uvicorn team_api:app  --reload --port 8001",
+    "server:api2": "uvicorn player_api:app --reload --port 8002",
+    "server:api3": "uvicorn match_api:app --reload --port 8003",
+    "start": "concurrently \"npm:server:json\" \"npm:server:api1\" \"npm:server:api2\" \"npm:server:api3\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}

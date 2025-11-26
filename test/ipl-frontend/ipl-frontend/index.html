@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>IPL Dashboard</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/modals.css">
+  <link rel="stylesheet" href="css/match.css">
+</head>
+<body>
+
+  <!-- Partials will be injected here -->
+  <div include-html="partials/header.html"></div>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <h2>Teams</h2>
+      <ul id="teams">
+        <li id="loading">Loading teams...</li>
+      </ul>
+    </aside>
+
+    <main class="content">
+      <section class="card">
+        <h2>Team Details</h2>
+        <p><strong>ID:</strong> <span id="team_id"></span></p>
+        <p><strong>Name:</strong> <span id="team_name"></span></p>
+        <p><strong>Abbreviation:</strong> <a href="#" id="team_abbreviation"></a></p>
+        <p><strong>City:</strong> <span id="team_city"></span></p>
+        <p><strong>Championships Won:</strong> <span id="team_championshipsWon"></span></p>
+        <div id="team_tools" class="detail-tools"></div>
+      </section>
+
+      <section class="card">
+        <h2>Players</h2>
+        <div include-html="partials/players.html"></div>
+      </section>
+    </main>
+  </div>
+
+  <div include-html="partials/modals.html"></div>
+  <div include-html="partials/footer.html"></div>
+
+  <!-- Scripts: include.js must be loaded first -->
+  <script src="js/include.js"></script>
+  <script>
+    // Load partials then wire scripts
+    includeHTML().then(() => {
+      // partials loaded
+    });
+  </script>
+
+  <script src="js/modals.js"></script>
+  <script type="module" src="js/players.js" defer></script>
+  <script type="module" src="js/teams.js" defer></script>
+  <script type="module" src="js/match.js" defer></script>
+</body>
+</html>

@@ -10,7 +10,9 @@ app = FastAPI()
 origins = [
     "http://localhost",
     "http://127.0.0.1",
+    "http://127.0.0.1:5500",
     "http://localhost:3000",
+    "http://localhost:5500",
     "null"                    # <-- Important when loading HTML from file://
 ]
 
@@ -35,7 +37,7 @@ def get_all_teams():
 
 @app.get("/teams/{team_id}")
 def get_team_by_id(team_id: int):
-    return service.get_team_by_id(team_id)
+    return service.get_team_by_id(team_id)[0]
 
 #http://localhost:8000/all_teams/names
 @app.get("/all_teams/names")

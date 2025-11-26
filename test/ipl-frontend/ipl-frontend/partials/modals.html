@@ -1,0 +1,35 @@
+<!-- Global modals -->
+<div id="entityModal" class="modal" aria-hidden="true">
+  <div class="modal-dialog">
+    <header class="modal-header">
+      <h3 id="entityModalTitle">Modal</h3>
+      <button class="modal-close" id="entityModalClose">&times;</button>
+    </header>
+    <form id="entityForm" class="modal-form">
+      <input type="hidden" id="entity_action" name="action" value="">
+      <input type="hidden" id="entity_type" name="type" value="">
+      <input type="hidden" id="entity_id" name="id" value="">
+      <div id="entityFormBody"></div>
+      <footer class="modal-footer">
+        <button type="button" id="entityCancel" class="btn btn-secondary">Cancel</button>
+        <button type="submit" id="entitySubmit" class="btn btn-primary">Save</button>
+      </footer>
+    </form>
+  </div>
+</div>
+
+<div id="deleteModal" class="modal" aria-hidden="true">
+  <div class="modal-dialog small">
+    <header class="modal-header">
+      <h3 id="deleteModalTitle">Confirm Deletion</h3>
+      <button class="modal-close" id="deleteModalClose">&times;</button>
+    </header>
+    <div class="modal-body">
+      <p id="deleteMessage">Are you sure?</p>
+    </div>
+    <footer class="modal-footer">
+      <button id="deleteCancel" class="btn btn-secondary">Cancel</button>
+      <button id="deleteConfirm" class="btn btn-danger">Delete</button>
+    </footer>
+  </div>
+</div>

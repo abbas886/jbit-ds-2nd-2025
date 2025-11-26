@@ -916,14 +916,14 @@ A)  Task 1 - Database (One day)
 4)start json-server and test through browser/postman
 
 B)Task 2: Service implementation(One day - couple of files)
-1) Create  separate service fiels - for each entity
+1) Create  separate service files - for each entity
 2) import required libraries
 3) base_url  (in which the json-server is ruunig)
 4) define the crud operations
 5) test through postmain / through code
 
 C) Task 3: api implementation(One day - couple of files))
-1) Create  separate api fields - for each entity
+1) Create  separate api file - for each entity
 2) import required libraries
 3) define crud operations
 4) test through swagger-ui   http://localhost:8000/docs
@@ -934,6 +934,56 @@ D) Task 4: create frontend using html/css/js(couple of days)  OR Angular/React
   you have to add these endpoints in api and service files( apart from existing end points)
 
 E) Prepare project documentation/report - will discuss separately
+
+24/11/25
+--------
+Recap:
+Few of the teams they identified the domains and entities - I hope they completed json-server side - data preparation and testing.
+Given list tasks to complete the project
+
+
+What we are going to discuss today:  
+only pending api is match_api(player_api and team_api already done)
+
+json-server - we have to test through postman
+service layer - test through test file which we created like player_service_test, team_service_test)
+api layer - test through swagger ( even we can test through postman)
+
+25/11/25
+--------
+Recap : What we dsicussed yesterday:
+    match_api - tested through swagger-ui
+    Doubt session
+What we are going to discuss today.
+Front end integration:
+Dont't write complete FE code in single HTML file (css,js,html in single file - Don't do it)
+We supposed to have proper folder structure - modularity, maintanance
+Folder stucture:
+<project_client>
+    pages folder (contains only html files)
+        player.html
+        match.html
+        teams.html
+
+    styles folder 
+        player.css
+        match.css
+        teams.css
+    script folder
+        player.js
+        teams.js
+        match.js
+    index.html
+    style.css
+
+    in visual studio code - insteall one pluggin/extension called liveserver
+
+
+
+
+
+
+
 
 
 

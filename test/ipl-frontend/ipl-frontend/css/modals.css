@@ -1,0 +1,14 @@
+/* modals.css */
+.modal { position:fixed; inset:0; display:none; align-items:center; justify-content:center; background:rgba(0,0,0,0.45); z-index:2000; padding:20px; }
+.modal[aria-hidden="false"] { display:flex; }
+.modal-dialog { width:100%; max-width:720px; background:#fff; border-radius:10px; box-shadow:0 10px 40px rgba(0,0,0,0.25); overflow:hidden; }
+.modal-dialog.small { max-width:420px; }
+.modal-header { display:flex; justify-content:space-between; align-items:center; padding:12px 16px; background:linear-gradient(90deg,#1e3d59,#3a6073); color:#fff; }
+.modal-close { background:transparent; border:none; color:#fff; font-size:22px; cursor:pointer; }
+.modal-form { display:flex; flex-direction:column; }
+#entityFormBody { padding:16px; display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+#entityFormBody .full { grid-column:1 / -1; }
+label { display:block; font-size:13px; margin-bottom:6px; color:#333; }
+input[type="text"], input[type="number"], input[type="date"], select, textarea { width:100%; padding:8px 10px; border-radius:6px; border:1px solid #ddd; font-size:14px; }
+.modal-footer { display:flex; justify-content:flex-end; gap:10px; padding:12px 16px; background:#fafafa; border-top:1px solid #eee; }
+@media (max-width:600px) { #entityFormBody { grid-template-columns:1fr; } .modal-dialog { max-width:95%; } }

@@ -1,0 +1,53 @@
+/* styles.css - core layout */
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Inter, Arial, sans-serif;
+  background: #f4f7fb;
+  color: #222;
+}
+.main-header {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:12px 20px;
+  background:linear-gradient(90deg,#1e3d59,#3a6073);
+  color:#fff;
+  position:sticky;
+  top:0;
+  z-index:1000;
+}
+.main-header .logo { display:flex; align-items:center; gap:10px; }
+.main-header .logo img { height:36px; width:36px; object-fit:contain; }
+.header-center input { padding:8px 10px; border-radius:6px; border:none; width:220px; }
+.header-nav { display:flex; align-items:center; gap:10px; }
+.header-nav a { color:#fff; text-decoration:none; margin-right:8px; }
+.header-nav .btn { margin-left:8px; }
+.layout { display:flex; min-height:calc(100vh - 120px); }
+/* sidebar */
+.sidebar { width:260px; background:#fff; padding:16px; border-right:1px solid #e6e9ee; overflow:auto; }
+.sidebar h2 { margin-top:0; }
+#teams { list-style:none; padding:0; margin:0; }
+#teams li { padding:8px 6px; border-bottom:1px solid #f0f0f0; display:flex; justify-content:space-between; align-items:center; gap:8px; }
+#teams li.selected { background:#ffefc0; }
+.team-tools { display:flex; gap:6px; }
+.icon-btn { border:none; background:transparent; cursor:pointer; padding:6px; font-size:14px; }
+/* content */
+.content { flex:1; padding:20px; overflow:auto; }
+.card { background:#fff; padding:16px; border-radius:8px; box-shadow:0 6px 16px rgba(16,24,40,0.06); margin-bottom:16px; }
+.detail-tools { margin-top:12px; display:flex; gap:8px; }
+/* players list */
+.players-card ul, .card ul { list-style:none; padding:0; margin:0; }
+.players-card li, #players_list li { padding:8px; border-bottom:1px solid #f2f2f2; display:flex; justify-content:space-between; align-items:center; }
+/* footer */
+.main-footer { background:#1e3d59; color:#fff; padding:24px; display:flex; gap:20px; justify-content:space-around; flex-wrap:wrap; }
+.footer-section { min-width:200px; }
+.btn { padding:8px 12px; border-radius:6px; border:none; cursor:pointer; }
+.btn-primary { background:#1e3d59; color:#fff; }
+.btn-secondary { background:#ddd; color:#222; }
+.btn-danger { background:#c92a2a; color:#fff; }
+/* responsive */
+@media (max-width:900px) {
+  .layout { flex-direction:column; }
+  .sidebar { width:100%; height:auto; }
+}
