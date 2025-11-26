@@ -1,0 +1,97 @@
+# ----------------------------
+# Python / FastAPI
+# ----------------------------
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pdb
+*.egg-info/
+*.egg
+*.log
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv/
+
+# Pydantic cache
+.pydantic/
+
+# FastAPI UUID cache (optional)
+.cache/
+
+# ----------------------------
+# JSON-Server
+# ----------------------------
+# Node modules (if installed)
+node_modules/
+
+# npm/yarn logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# JSON-Server temp files
+db_backup.json
+*.tmp
+
+# ----------------------------
+# REST Client
+# ----------------------------
+# VS Code REST Client environment files
+*.http
+*.rest
+rest-client.env.json
+
+# ----------------------------
+# Frontend (HTML/JS/CSS)
+# ----------------------------
+# Build / dist directories (if students use build tools)
+dist/
+build/
+out/
+
+# JS packages (optional frontend projects)
+package-lock.json
+pnpm-lock.yaml
+
+# ----------------------------
+# Editor & IDE Settings
+# ----------------------------
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ----------------------------
+# OS Files
+# ----------------------------
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+desktop.ini
+
+# Linux temp
+*~
+
+# ----------------------------
+# Misc
+# ----------------------------
+# Logs / temp output
+logs/
+*.bak
+*.tmp
+*.old
+
+# Python Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Coverage & test outputs (future use)
+coverage/
+htmlcov/
+.pytest_cache/
+
