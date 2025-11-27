@@ -85,10 +85,11 @@ Explain understanding of the problem:
 - Libraries & dependencies  
 
 ### **Technical Concepts Learned**
+- Writing better programs (clean code principles)  
 - HTTP methods & status codes  
 - Database design using JSON  
 - Debugging techniques  
-- Writing better programs (clean code principles)  
+(Students can modify based on their experience.)
 
 ---
 
@@ -113,11 +114,13 @@ Include diagrams if possible:
 - Business logic developed  
 - Error handling & validation  
 - Testing strategy (Swagger, REST Client)  
+(Students can modify based on their experience.)
 
 ### **Frontend Integration** (If applicable)
 - Screens/pages developed  
 - Fetch API calls  
 - UI functionality  
+(Students can modify based on their experience.)
 
 ---
 
@@ -127,7 +130,7 @@ Include:
 - REST Client test results  
 - JSON data samples  
 - Screenshots of frontend output (if applicable)  
-
+(Students can modify based on their experience.)
 ---
 
 ## Conclusion
@@ -144,7 +147,7 @@ Include:
 - Database enhancements  
 - UI enhancements (if frontend done)  
 - Deployment opportunities (optional)  
-
+(Students can modify based on their experience.)
 ---
 
 ## Resources

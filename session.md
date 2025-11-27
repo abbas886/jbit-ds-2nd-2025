@@ -960,23 +960,90 @@ Dont't write complete FE code in single HTML file (css,js,html in single file - 
 We supposed to have proper folder structure - modularity, maintanance
 Folder stucture:
 <project_client>
-    pages folder (contains only html files)
+    "pages" folder (contains only html files)
         player.html
         match.html
         teams.html
 
-    styles folder 
+    "styles" folder 
         player.css
         match.css
         teams.css
-    script folder
+    "script" folder
         player.js
         teams.js
         match.js
     index.html
     style.css
 
-    in visual studio code - insteall one pluggin/extension called liveserver
+    in visual studio code - install one pluggin/extension called liveserver
+
+    BE - start json-server(a) and Fast api servers(3)
+    Till now we started json-server and other fast api servers independently.
+    Start each server by using separate commands are difficult/time consuming
+    Try to start all the servers with using single command
+    1)batch files
+        created start_server.bat
+            added all the commands
+        to execute:  start_server.bat
+    2)npm - package.json
+        create package.json
+            add all the commands
+        to execute it :  npm start
+    3)docker compose up
+
+Front end integration
+
+26/11/25
+--------
+Recap:
+
+What we supposed to discuss today:
+
+Report:
+
+version control - github
+- few team pushed zipped file - wrong
+- fea teams directly pushed in "master" branch - wrong
+- few team pushed code after completion of the project = wrong
+
+push the code every day once it stable
+every day - you pull the code - custom branches (create branche - like "develop")
+update code
+push the code to develop branch
+PR(Pull Request) request your changes to master branch(don't directly push the code in master branch)
+Other teamleads will review you code, if any issues, they will raise it so that developer will rework/fix the issues
+Don't use drag and drop   - use command prompt - gitbash
+    https://git-scm.com/install/windows
+If everything is fine - teamleads can merge these changes to master branch
+
+Will demo - git demo
+create repository
+add readMe.md
+.gitignore
+created branch called "develop"
+
+How can I starte working on this repo? - jbit-repo-demo just created
+git commands - clone, pull, push, commit, add , branch, checkout, status
+
+open the cmd prompt in the folder wherever you want to clone.
+git clone https://github.com/abbas886/jbit-repo-demo
+git branche - will show in which is the current branch you cloned (i.e., master)
+git checkout develop -  it will siwtch to "develop" branch
+
+git status - will show the changes done by you.
+
+git add .    (all the modified files will be added)
+git commit -m "meaningful commit"
+git push - it will push to the develop branch (you can check in the browser)
+
+git pull  (will pull the latest code from the repo/particular branch)
+
+
+
+Report : write report  this will dsicuss tomorrow.
+
+
 
 
 
